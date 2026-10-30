@@ -1,0 +1,9 @@
+So far, the classifier is still running (with -Xmx64g on MB). We're using a subsample of size 20K sequences.
+Once it finishes, we can then run the final version of the find_mismatches script. [Note:  I'm not entirely sure if we should consider the bootstrap values or not in the classifications to be checked.]
+
+That will give us a list of apparent mismatches between the taxonomic classifications in the (subsample of the) fasta file used to train the classifier, and the classification results produced on the test run. This is only a list, and it is only based on genus-level classifications. We can check it against the potential taxonomic label anomalies (e.g., misassigned plant host lineages or missing genera) which had been suspected by initial validation of the trainset.
+
+However, if we really want to test it on par with leave-one-out testing, we will have to also use family and species-level classifications. And then get bootstrap values. (Somehow.)
+And then, ideally, we could compare the distribution of bootstrap values for the mismatches, with the distribution of the correctly assigned ones.
+
+LINK to conversation thread (7-day) https://share.google/aimode/K7Izkp9Yqrfplj0oH
